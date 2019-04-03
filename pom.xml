@@ -11,13 +11,9 @@
 	
 	<modules>
 		<module>vcloud-core</module>
-		<module>vcloud-modules</module>
-		<module>vcloud-sso</module>
-		<module>vcloud-client</module>
 		<module>vcloud-server</module>
 		<module>vcloud-test</module>
 		<module>vcloud-zuul</module>
-		<module>vcloud-base</module>
 		<module>vcloud-admin</module>
 	</modules>
 	

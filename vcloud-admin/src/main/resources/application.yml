@@ -1,0 +1,10 @@
+
+server:
+  port: 10003
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:10001/eureka/
+spring:
+  application:
+    name: vcloud-admin

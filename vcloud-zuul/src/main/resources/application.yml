@@ -1,0 +1,21 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:10001/eureka/
+server:
+  port: 10002
+spring:
+  application:
+    name: vcloud-zuul
+  servlet:
+    multipart:
+      max-file-size: 100Mb
+      max-request-size: 100Mb
+ribbon:
+    ReadTimeout: 60000
+    ConnectTimeout: 60000
+
+
+
+
+
