@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.vcloud.admin.mapper.PermissionMapper">
+    <resultMap id="PermissionMap" type="cn.com.vcloud.admin.model.entity.SysPermission">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="resource" jdbcType="VARCHAR" property="resource"/>
+        <result column="code" jdbcType="VARCHAR" property="code"/>
+        <result column="handle" jdbcType="VARCHAR" property="handle"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+         <result column="parent_id" jdbcType="VARCHAR" property="parentId"/>
+    </resultMap>
+
+	<resultMap id="PermissionResourceMap" type="cn.com.vcloud.core.common.Resource">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="resource" jdbcType="VARCHAR" property="resource"/>
+        <result column="code" jdbcType="VARCHAR" property="code"/>
+        <result column="handle" jdbcType="VARCHAR" property="handle"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="parent_id" jdbcType="VARCHAR" property="parentId"/>
+    </resultMap>
+    
+    <resultMap id="ResourceHandleMap" type="cn.com.vcloud.core.common.Resource">
+        <result column="resource" jdbcType="VARCHAR" property="resource"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <collection property="handleList" ofType="com.alibaba.fastjson.JSONObject">
+            <id column="id" jdbcType="BIGINT" property="id"/>
+            <result column="handle" jdbcType="VARCHAR" property="handle"/>
+            <result column="code" jdbcType="VARCHAR" property="code"/>
+        </collection>
+    </resultMap>
+
+	<select id="list" resultMap="PermissionMap">
+        SELECT 
+        p.name,
+        p.code,
+        p.resource,
+        p.id,
+        p.parent_id,
+        p.handle
+        FROM icloud_sys_permission p
+    </select>
+    
+    <select id="findAllResourcePermission" resultMap="ResourceHandleMap">
+        SELECT
+        p.name,
+        p.code,
+        p.resource,
+        p.id,
+        p.handle
+        FROM `icloud_sys_permission` p
+    </select>
+</mapper>

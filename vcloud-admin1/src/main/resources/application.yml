@@ -1,0 +1,63 @@
+server:
+    port: 10005
+    tomcat:
+      uri-encoding: utf-8
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:10001/eureka/
+  instance:
+    prefer-ip-address: true
+
+spring:
+  application:
+    name: vcloud-admin1
+  datasource:
+    url: jdbc:mysql://localhost:3306/icloud?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT
+    username: root
+    password: root
+    druid:
+          filters:
+#            - stat
+#            - wall
+#            - log4j
+          stat-view-servlet:
+            login-username: root
+            login-password: root
+          pool-prepared-statements: true
+          max-open-prepared-statements: 100
+    resources:
+      chain:
+        strategy:
+          content:
+            enabled: true
+            paths:
+            - /**
+  mvc:
+    throw-exception-if-no-handler-found: true
+  resources:
+    add-mappings: false
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+  type-aliases-package: cn.com.icloud.auth.mapper  
+  
+# 配置分页插件pagehelper
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
+             
+logging:
+  level:
+    cn.com.icloud.auth.mapper: debug
+    
+jwt.expiration-time: 86400
+jwt.header: Authorization
+jwt.token-prefix: Bearer
+jwt.privateKey: rsa/private-key.pem
+jwt.publicKey: rsa/public-key.pem
+jwt.authorities-key: auth
+
+
+ 

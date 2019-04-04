@@ -7,10 +7,10 @@ server:
 spring:
   application:
     name: vcloud-zuul
-  servlet:
-    multipart:
-      max-file-size: 100Mb
-      max-request-size: 100Mb
+#  servlet:
+#    multipart:
+#      max-file-size: 100Mb
+#      max-request-size: 100Mb
 ribbon:
     ReadTimeout: 60000
     ConnectTimeout: 60000

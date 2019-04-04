@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.vcloud.admin.mapper.UserMapper">
+
+	<resultMap id="User" type="cn.com.vcloud.admin.model.entity.SysUser">
+        <id property="id" column="id"/>
+        <result property="account" column="account"/>
+        <result property="password" column="password"/>
+        <!-- <result property="enable" column="enable"/> -->
+        <result property="tel" column="tel"/>
+        <result property="userName" column="user_name"/>
+        <result property="avatar" column="avatar"/>
+
+        <collection property="roles" ofType="cn.com.vcloud.admin.model.entity.SysRole">
+            <id property="id" column="role_id"/>
+            <result property="roleName" column="role_name"/>
+            <result property="roleKey" column="role_key"/>
+            <result property="enable" column="role_enable"/>
+        </collection>
+    </resultMap>
+    
+    <resultMap id="UserMap" type="cn.com.vcloud.admin.model.entity.SysUser">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="account" jdbcType="VARCHAR" property="account"/>
+        <result column="username" jdbcType="VARCHAR" property="username"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+    </resultMap>
+    
+	<resultMap id="UserWithRoleMap" type="cn.com.vcloud.admin.model.entity.SysUser" extends="UserMap">
+        <result column="role_id" jdbcType="BIGINT" property="roleId" />
+        <result column="role_name" jdbcType="VARCHAR" property="roleName" />
+        <result column="role_key" jdbcType="VARCHAR" property="roleKey" />
+    </resultMap>
+    
+    <select id="findAllUserWithRole" resultMap="UserWithRoleMap">
+        SELECT
+        u.*,
+        r.id as role_id,
+        r.role_name as role_name,
+         r.role_key as role_key
+        FROM `icloud_sys_user` u
+        LEFT JOIN `icloud_sys_user_role` ur ON u.id = ur.user_id
+        LEFT JOIN `icloud_sys_role` r ON ur.role_id = r.id
+    </select>
+    
+    <resultMap id="UserDetailMap" type="cn.com.vcloud.admin.model.entity.SysUser" extends="UserWithRoleMap">
+        <!-- 1角色对应多权限 -->
+        <collection property="permissionCodeList" ofType="String">
+            <result column="permission_code" jdbcType="VARCHAR" property="permissionCode" />
+        </collection>
+        <collection property="permissionList" ofType="cn.com.vcloud.admin.model.entity.SysPermission">
+            <result column="permission_code" jdbcType="VARCHAR" property="code" />
+            <result column="permission_name" jdbcType="VARCHAR" property="name" />
+            <result column="handle" jdbcType="VARCHAR" property="handle" />
+        </collection>
+    </resultMap>
+    
+    <select id="findDetailBy" resultMap="UserDetailMap">
+        SELECT
+        u.*,
+        r.id as role_id,
+        r.role_name as role_name,
+        r.role_key as role_key,
+        p.code as permission_code,
+        p.name as permission_name,
+        p.handle
+        FROM `icloud_sys_user` u
+        LEFT JOIN `icloud_sys_user_role` ur ON u.id = ur.user_id
+        LEFT JOIN `icloud_sys_role` r ON ur.role_id = r.id
+        LEFT JOIN `icloud_sys_role_permission` rp ON r.id = rp.role_id
+        LEFT JOIN `icloud_sys_permission` p ON rp.permission_id = p.id
+        <where>
+            <if test="id != null">u.id = #{id}</if>
+            <if test="account != null">u.account = #{account}</if>
+        </where>
+    </select>
+    
+    <select id="getById" resultMap="User">
+        select
+            u.*,
+            v.role_id,
+            vr.role_name,
+            vr.role_key,
+            vr.enable as role_enable
+        from icloud_sys_user u
+            left join icloud_sys_user_role v on u.id = v.user_id
+            left join icloud_sys_role vr on v.role_id = vr.id
+        where u.id = #{id};
+    </select>
+
+
+</mapper>
