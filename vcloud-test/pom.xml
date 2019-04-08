@@ -8,8 +8,11 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>vcloud-test</artifactId>
+	<name>vcloud-test</name>
+	<packaging>jar</packaging>
 	<properties>
 		<java.version>1.8</java.version>
+		<skipTests>true</skipTests>
 	</properties>
 
 	<dependencies>
@@ -49,6 +52,16 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+                    <mainClass>cn.com.vcloud.test.TestApplication</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                   </execution>
+                </executions>
 			</plugin>
 		</plugins>
 	</build>

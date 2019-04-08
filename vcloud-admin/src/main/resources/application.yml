@@ -53,5 +53,4 @@ jwt.privateKey: rsa/private-key.pem
 jwt.publicKey: rsa/public-key.pem
 jwt.authorities-key: auth
 
-
  

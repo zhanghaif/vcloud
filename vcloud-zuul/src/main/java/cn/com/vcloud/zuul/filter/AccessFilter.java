@@ -13,14 +13,10 @@ import java.io.PrintWriter;
 import java.util.List;
 import java.util.Set;
 
-/**
- * @version V1.0
- * @Author bootdo 1992lcg@163.com
- */
 public class AccessFilter extends ZuulFilter {
 
 
-    private String ignorePath = "/api-admin/login";
+    private String ignorePath = "/v1/login";
 
     @Override
     public String filterType() {

@@ -6,10 +6,10 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 @EnableEurekaServer
 @SpringBootApplication
-public class VcloudApplication {
+public class ServerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(VcloudApplication.class, args);
+		SpringApplication.run(ServerApplication.class, args);
 	}
 
 }

@@ -10,8 +10,6 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
-import cn.com.vcloud.zuul.filter.AccessFilter;
-
 @EnableFeignClients
 @EnableZuulProxy
 @EnableEurekaClient
@@ -20,11 +18,6 @@ public class ZuulApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ZuulApplication.class, args);
-	}
-	
-	@Bean
-	public AccessFilter accessFilter(){
-		return new AccessFilter();
 	}
 
 	@Bean

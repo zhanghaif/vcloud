@@ -8,11 +8,12 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>vcloud-zuul</artifactId>
-	<name>vcloud</name>
+	<name>vcloud-zuul</name>
 	<description>聚合项目</description>
 	<packaging>jar</packaging>
 	<properties>
 		<java.version>1.8</java.version>
+		<skipTests>true</skipTests>
 	</properties>
 
 	<dependencies>
@@ -57,6 +58,16 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+                    <mainClass>cn.com.vcloud.zuul.ZuulApplication</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                   </execution>
+                </executions>
 			</plugin>
 		</plugins>
 	</build>

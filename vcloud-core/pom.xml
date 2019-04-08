@@ -8,7 +8,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>vcloud-core</artifactId>
-	<name>vcloud</name>
+	<name>vcloud-core</name>
 	<description>核心包</description>
 	<packaging>jar</packaging>
 	<properties>
@@ -20,6 +20,7 @@
 		<guava.version>23.0</guava.version>
 		<springfox-swagger2.version>2.8.0</springfox-swagger2.version>
 		<mapper-spring-boot-starter.version>1.2.4</mapper-spring-boot-starter.version>
+		<skipTests>true</skipTests>
 	</properties>
 
 	<dependencies>
@@ -95,6 +96,16 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+                    <mainClass>cn.com.vcloud.core.CoreApplication</mainClass>
+                </configuration>
+				<executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                   </execution>
+                </executions>
 			</plugin>
 		</plugins>
 	</build>

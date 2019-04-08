@@ -8,7 +8,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>vcloud-server</artifactId>
-	<name>vcloud</name>
+	<name>vcloud-server</name>
 	<description>聚合项目</description>
 	<packaging>jar</packaging>
 	<properties>
@@ -38,6 +38,16 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+                    <mainClass>cn.com.vcloud.ServerApplication</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                   </execution>
+                </executions>
 			</plugin>
 		</plugins>
 	</build>
