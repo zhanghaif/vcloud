@@ -29,6 +29,11 @@ public final class ProjectConstant {
     public static final String ADMIN_MAPPER_PACKAGE = BASE_PACKAGE + ".admin.mapper";
     
     /**
+     ** 权限管理模块controller所在包
+     */
+    public static final String ADMIN_CONTROLLER_PACKAGE = BASE_PACKAGE + ".admin.controller";
+    
+    /**
      ** 示例代码管理模块基本结构包
      */
     public static final String TEST_BASE_PACKAGE = ".test";

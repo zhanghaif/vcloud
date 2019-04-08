@@ -63,6 +63,9 @@ public class WebMvcConfig extends WebMvcConfigurationSupport {
 
         registry.addResourceHandler("/webjars/**")
             .addResourceLocations("classpath:/META-INF/resources/webjars/");
+        
+        registry.addResourceHandler("/static/**")
+        .addResourceLocations("classpath:/META-INF/resources/static/");
     }
     
 //    @Override

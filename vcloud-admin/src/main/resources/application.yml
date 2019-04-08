@@ -12,6 +12,8 @@ server:
 spring:
   application:
     name: vcloud-admin
+  profiles:
+      include: swagger,jwt
   datasource:
     url: jdbc:mysql://localhost:3306/ietm?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT
     username: root
@@ -46,11 +48,6 @@ logging:
   level:
     cn.com.icloud.admin.mapper: debug
     
-jwt.expiration-time: 86400
-jwt.header: Authorization
-jwt.token-prefix: Bearer
-jwt.privateKey: rsa/private-key.pem
-jwt.publicKey: rsa/public-key.pem
-jwt.authorities-key: auth
+
 
  

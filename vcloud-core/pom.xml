@@ -64,7 +64,12 @@
             <version>${jjwt.version}</version>
         </dependency>
          <!-- swagger2 -->
-        <dependency>
+         <dependency>
+		    <groupId>com.battcn</groupId>
+		    <artifactId>swagger-spring-boot-starter</artifactId>
+		    <version>2.1.5-RELEASE</version>
+		</dependency>
+        <!-- <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
             <version>${springfox-swagger2.version}</version>
@@ -73,7 +78,7 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
             <version>${springfox-swagger2.version}</version>
-        </dependency>
+        </dependency> -->
         <!-- 常用库依赖 -->
         <dependency>
             <groupId>commons-codec</groupId>
