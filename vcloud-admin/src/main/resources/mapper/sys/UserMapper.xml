@@ -38,9 +38,9 @@
         r.id as role_id,
         r.role_name as role_name,
          r.role_key as role_key
-        FROM `icloud_sys_user` u
-        LEFT JOIN `icloud_sys_user_role` ur ON u.id = ur.user_id
-        LEFT JOIN `icloud_sys_role` r ON ur.role_id = r.id
+        FROM `sys_user` u
+        LEFT JOIN `sys_user_role` ur ON u.id = ur.user_id
+        LEFT JOIN `sys_role` r ON ur.role_id = r.id
     </select>
     
     <resultMap id="UserDetailMap" type="cn.com.vcloud.admin.model.entity.SysUser" extends="UserWithRoleMap">
@@ -64,11 +64,11 @@
         p.code as permission_code,
         p.name as permission_name,
         p.handle
-        FROM `icloud_sys_user` u
-        LEFT JOIN `icloud_sys_user_role` ur ON u.id = ur.user_id
-        LEFT JOIN `icloud_sys_role` r ON ur.role_id = r.id
-        LEFT JOIN `icloud_sys_role_permission` rp ON r.id = rp.role_id
-        LEFT JOIN `icloud_sys_permission` p ON rp.permission_id = p.id
+        FROM `sys_user` u
+        LEFT JOIN `sys_user_role` ur ON u.id = ur.user_id
+        LEFT JOIN `sys_role` r ON ur.role_id = r.id
+        LEFT JOIN `sys_role_permission` rp ON r.id = rp.role_id
+        LEFT JOIN `sys_permission` p ON rp.permission_id = p.id
         <where>
             <if test="id != null">u.id = #{id}</if>
             <if test="account != null">u.account = #{account}</if>
@@ -82,9 +82,9 @@
             vr.role_name,
             vr.role_key,
             vr.enable as role_enable
-        from icloud_sys_user u
-            left join icloud_sys_user_role v on u.id = v.user_id
-            left join icloud_sys_role vr on v.role_id = vr.id
+        from sys_user u
+            left join sys_user_role v on u.id = v.user_id
+            left join sys_role vr on v.role_id = vr.id
         where u.id = #{id};
     </select>
 

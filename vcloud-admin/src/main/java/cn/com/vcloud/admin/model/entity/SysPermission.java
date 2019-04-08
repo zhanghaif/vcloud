@@ -6,7 +6,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Data
-@Table(name="icloud_sys_permission")
+@Table(name="sys_permission")
 public class SysPermission {
 
 	/**

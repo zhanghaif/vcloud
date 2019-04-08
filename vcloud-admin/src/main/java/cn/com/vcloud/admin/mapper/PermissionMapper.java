@@ -28,6 +28,6 @@ public interface PermissionMapper extends MyMapper<SysPermission> {
      *
      * @return 代码列表
      */
-    @Select("SELECT p.code FROM `icloud_sys_permission` p")
+    @Select("SELECT p.code FROM `sys_permission` p")
     List<String> findAllCode();
 }

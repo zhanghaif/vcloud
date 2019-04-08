@@ -27,8 +27,8 @@
         p.id as permission_id,
         p.resource as permission_resource,
         p.code as permission_code
-        FROM `icloud_sys_role` r
-        LEFT JOIN `icloud_sys_role_permission` rp ON r.id = rp.role_id
-        LEFT JOIN `icloud_sys_permission` p ON rp.permission_id = p.id
+        FROM `sys_role` r
+        LEFT JOIN `sys_role_permission` rp ON r.id = rp.role_id
+        LEFT JOIN `sys_permission` p ON rp.permission_id = p.id
     </select>
 </mapper>

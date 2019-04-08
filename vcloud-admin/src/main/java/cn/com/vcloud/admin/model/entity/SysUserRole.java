@@ -7,7 +7,7 @@ import javax.persistence.Table;
 import lombok.Data;
 
 @Data
-@Table(name = "icloud_sys_user_role")
+@Table(name = "sys_user_role")
 public class SysUserRole {
     /**
      * 用户Id

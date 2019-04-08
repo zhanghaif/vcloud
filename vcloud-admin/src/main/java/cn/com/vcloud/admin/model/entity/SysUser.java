@@ -13,7 +13,7 @@ import com.alibaba.fastjson.annotation.JSONField;
 import lombok.Data;
 
 @Data
-@Table(name="icloud_sys_user")
+@Table(name="sys_user")
 public class SysUser {
 
 	/**

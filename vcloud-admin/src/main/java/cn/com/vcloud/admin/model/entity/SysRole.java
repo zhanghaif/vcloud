@@ -14,7 +14,7 @@ import cn.com.vcloud.core.common.Resource;
 import lombok.Data;
 
 @Data
-@Table(name="icloud_sys_role")
+@Table(name="sys_role")
 public class SysRole {
 
     private Long id;

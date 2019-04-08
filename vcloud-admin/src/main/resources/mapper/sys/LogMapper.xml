@@ -13,11 +13,11 @@
 
     <select id="getLogs" resultMap="SysLog">
         select *
-        from icloud_sys_log
+        from sys_log
     </select>
 
     <insert id="save">
-        insert into icloud_sys_log (module, action, exception, uid, ip)
+        insert into sys_log (module, action, exception, uid, ip)
         values (#{module}, #{action}, #{exception}, #{uid}, #{ip});
     </insert>
 </mapper>

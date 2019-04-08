@@ -37,7 +37,7 @@
         p.id,
         p.parent_id,
         p.handle
-        FROM icloud_sys_permission p
+        FROM sys_permission p
     </select>
     
     <select id="findAllResourcePermission" resultMap="ResourceHandleMap">
@@ -47,6 +47,6 @@
         p.resource,
         p.id,
         p.handle
-        FROM `icloud_sys_permission` p
+        FROM `sys_permission` p
     </select>
 </mapper>

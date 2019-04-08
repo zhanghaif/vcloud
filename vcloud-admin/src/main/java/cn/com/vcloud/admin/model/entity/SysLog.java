@@ -5,7 +5,7 @@ import java.util.Date;
 import javax.persistence.Table;
 
 @Data
-@Table(name="icloud_sys_log")
+@Table(name="sys_log")
 public class SysLog {
 
     private Long id;
