@@ -1,4 +1,4 @@
-package cn.com.vcloud.admin.core.config;
+package cn.com.vcloud.core.config;
 
 import java.nio.charset.Charset;
 import java.util.ArrayList;

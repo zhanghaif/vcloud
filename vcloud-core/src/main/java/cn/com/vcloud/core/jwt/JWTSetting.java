@@ -1,4 +1,4 @@
-package cn.com.vcloud.admin.core.jwt;
+package cn.com.vcloud.core.jwt;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

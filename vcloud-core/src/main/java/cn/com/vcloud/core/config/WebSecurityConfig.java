@@ -1,4 +1,4 @@
-package cn.com.vcloud.admin.core.config;
+package cn.com.vcloud.core.config;
 
 import javax.annotation.Resource;
 
@@ -15,9 +15,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import cn.com.vcloud.admin.core.jwt.JwtAuthenticationEntryPoint;
-import cn.com.vcloud.admin.core.jwt.JwtAuthenticationFilter;
-import cn.com.vcloud.admin.service.impl.UserDetailsServiceImpl;
+import cn.com.vcloud.core.jwt.JwtAuthenticationEntryPoint;
+import cn.com.vcloud.core.jwt.JwtAuthenticationFilter;
 
 /**
  * 安全设置
@@ -31,11 +30,11 @@ class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Resource
     private JwtAuthenticationFilter jwtAuthenticationFilter;
 
-    @Bean
-    @Override
-    public UserDetailsServiceImpl userDetailsService() {
-        return new UserDetailsServiceImpl();
-    }
+//    @Bean
+//    @Override
+//    public UserDetailsServiceImpl userDetailsService() {
+//        return new UserDetailsServiceImpl();
+//    }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -73,8 +72,7 @@ class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 ).permitAll()
                 .antMatchers(
                         HttpMethod.GET,
-                        "/v1",
-                        "/druid"
+                        "/v1"
                 ).permitAll()
                 .antMatchers(
                         HttpMethod.GET,

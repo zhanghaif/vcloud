@@ -1,4 +1,4 @@
-package cn.com.vcloud.admin.core.config;
+package cn.com.vcloud.core.config;
 
 import org.hibernate.validator.HibernateValidator;
 import org.springframework.context.annotation.Bean;

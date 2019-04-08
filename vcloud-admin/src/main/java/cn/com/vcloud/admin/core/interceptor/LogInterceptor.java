@@ -13,10 +13,10 @@ import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import cn.com.vcloud.admin.core.common.SysLog;
-import cn.com.vcloud.admin.core.jwt.JwtUtil;
 import cn.com.vcloud.admin.model.entity.SysUser;
 import cn.com.vcloud.admin.service.LogService;
 import cn.com.vcloud.admin.service.UserService;
+import cn.com.vcloud.core.jwt.JwtUtil;
 import lombok.extern.slf4j.Slf4j;
 /**
  * @className: LogInterceptor

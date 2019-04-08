@@ -20,8 +20,6 @@
 		<module>vcloud-test</module>
 		<module>vcloud-zuul</module>
 		<module>vcloud-admin</module>
-		<module>vcloud-admin1</module>
-		<module>vcloud-admin2</module>
 	</modules>
 	
  	<dependencyManagement>

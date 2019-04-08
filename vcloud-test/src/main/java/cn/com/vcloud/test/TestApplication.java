@@ -9,8 +9,8 @@ import org.springframework.context.annotation.ComponentScan;
 import tk.mybatis.spring.annotation.MapperScan;
 
 @SpringBootApplication
-@MapperScan(basePackages = {"cn.com.vcloud.admin.mapper","cn.com.vcloud.test.mapper"})
-@ComponentScan(basePackages = {"cn.com.vcloud.admin"})
+@MapperScan(basePackages = MAPPER_PACKAGE)
+@ComponentScan("cn.com.vcloud.core,cn.com.vcloud.test")
 public class TestApplication {
 
 	public static void main(String[] args) {

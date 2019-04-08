@@ -1,4 +1,4 @@
-package cn.com.vcloud.admin.core.jwt;
+package cn.com.vcloud.core.jwt;
 
 import java.io.IOException;
 import java.io.Serializable;

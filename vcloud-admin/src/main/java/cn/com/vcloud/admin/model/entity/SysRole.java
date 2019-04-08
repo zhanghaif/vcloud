@@ -10,7 +10,7 @@ import org.hibernate.validator.constraints.Length;
 
 import com.alibaba.fastjson.annotation.JSONField;
 
-import cn.com.vcloud.admin.core.common.Resource;
+import cn.com.vcloud.core.common.Resource;
 import lombok.Data;
 
 @Data

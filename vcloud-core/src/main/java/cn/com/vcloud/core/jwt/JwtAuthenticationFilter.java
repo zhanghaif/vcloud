@@ -1,4 +1,4 @@
-package cn.com.vcloud.admin.core.jwt;
+package cn.com.vcloud.core.jwt;
 
 import java.io.IOException;
 
@@ -17,7 +17,8 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import cn.com.vcloud.admin.util.IpUtil;
+import cn.com.vcloud.core.util.IpUtil;
+
 
 /**
  * 身份认证过滤器

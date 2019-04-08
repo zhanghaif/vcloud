@@ -1,4 +1,4 @@
-package cn.com.vcloud.admin.util;
+package cn.com.vcloud.core.util;
 
 import org.apache.commons.codec.binary.Base64;
 import org.slf4j.Logger;

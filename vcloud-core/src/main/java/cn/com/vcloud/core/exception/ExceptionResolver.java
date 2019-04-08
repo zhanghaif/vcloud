@@ -2,20 +2,18 @@ package cn.com.vcloud.core.exception;
 
 import java.sql.SQLException;
 import java.util.stream.Collectors;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
-//import org.springframework.security.access.AccessDeniedException;
-//import org.springframework.security.authentication.BadCredentialsException;
-//import org.springframework.security.core.AuthenticationException;
-//import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -60,19 +58,19 @@ public class ExceptionResolver {
         return ResultGenerator.genFailedResult("database error");
     }
 
-//    @ResponseStatus(HttpStatus.UNAUTHORIZED)
-//    @ExceptionHandler({BadCredentialsException.class, AuthenticationException.class})
-//    public Result authException(final Throwable e) {
-//        log.error("身份验证异常 => {}", e.getMessage());
-//        return ResultGenerator.genUnauthorizedResult(e.getMessage());
-//    }
-//
-//    @ResponseStatus(HttpStatus.FORBIDDEN)
-//    @ExceptionHandler({AccessDeniedException.class, UsernameNotFoundException.class})
-//    public Result userException(final Throwable e) {
-//        log.error("用户异常 => {}", e.getMessage());
-//        return ResultGenerator.genFailedResult(e.getMessage());
-//    }
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    @ExceptionHandler({BadCredentialsException.class, AuthenticationException.class})
+    public Result authException(final Throwable e) {
+        log.error("身份验证异常 => {}", e.getMessage());
+        return ResultGenerator.genUnauthorizedResult(e.getMessage());
+    }
+
+    @ResponseStatus(HttpStatus.FORBIDDEN)
+    @ExceptionHandler({AccessDeniedException.class, UsernameNotFoundException.class})
+    public Result userException(final Throwable e) {
+        log.error("用户异常 => {}", e.getMessage());
+        return ResultGenerator.genFailedResult(e.getMessage());
+    }
 
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler(NoHandlerFoundException.class)

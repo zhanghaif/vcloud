@@ -1,4 +1,4 @@
-package cn.com.vcloud.admin.core.jwt;
+package cn.com.vcloud.core.jwt;
 
 import java.security.PrivateKey;
 import java.security.PublicKey;
@@ -19,7 +19,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Component;
 
-import cn.com.vcloud.admin.util.RSAUtil;
+import cn.com.vcloud.core.util.RSAUtil;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.CompressionCodecs;
 import io.jsonwebtoken.ExpiredJwtException;

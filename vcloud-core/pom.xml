@@ -9,12 +9,16 @@
 	</parent>
 	<artifactId>vcloud-core</artifactId>
 	<name>vcloud</name>
-	<description>聚合项目</description>
+	<description>核心包</description>
 	<packaging>jar</packaging>
 	<properties>
 		<fastjson.version>1.2.47</fastjson.version>
 		<jjwt.version>0.9.0</jjwt.version>
 		<java.version>1.8</java.version>
+		<fastjson.version>1.2.47</fastjson.version>
+		<commons-lang3.version>3.7</commons-lang3.version>
+		<guava.version>23.0</guava.version>
+		<springfox-swagger2.version>2.8.0</springfox-swagger2.version>
 		<mapper-spring-boot-starter.version>1.2.4</mapper-spring-boot-starter.version>
 	</properties>
 
@@ -57,6 +61,32 @@
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
             <version>${jjwt.version}</version>
+        </dependency>
+         <!-- swagger2 -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${springfox-swagger2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${springfox-swagger2.version}</version>
+        </dependency>
+        <!-- 常用库依赖 -->
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
         </dependency>
 	</dependencies>
 

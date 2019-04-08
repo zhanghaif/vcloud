@@ -10,13 +10,6 @@
 	<artifactId>vcloud-test</artifactId>
 	<properties>
 		<java.version>1.8</java.version>
-		<fastjson.version>1.2.47</fastjson.version>
-		<commons-lang3.version>3.7</commons-lang3.version>
-		<guava.version>23.0</guava.version>
-		<jjwt.version>0.9.0</jjwt.version>
-		<springfox-swagger2.version>2.8.0</springfox-swagger2.version>
-		<mapper-spring-boot-starter.version>1.2.4</mapper-spring-boot-starter.version>
-		<druid-spring-boot-starter.version>1.1.10</druid-spring-boot-starter.version>
 	</properties>
 
 	<dependencies>
@@ -25,53 +18,30 @@
 			<artifactId>vcloud-core</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
         </dependency>
-        <dependency>
-            <groupId>cn.com.vcloud</groupId>
-			<artifactId>vcloud-admin</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-        </dependency>
-		<dependency>
+	<!-- 	<dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-        </dependency>
+        </dependency> -->
 		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
-        <!-- 阿里 FastJson 依赖 -->
-        <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>${fastjson.version}</version>
-        </dependency>
-        <!-- 常用库依赖 -->
-        <dependency>
-            <groupId>commons-codec</groupId>
-            <artifactId>commons-codec</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>${commons-lang3.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>${guava.version}</version>
-        </dependency>
         <dependency>
 		  <groupId>org.projectlombok</groupId>
 		  <artifactId>lombok</artifactId>
 		</dependency>
+		<!-- MySQL JDBC驱动 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
 	</dependencies>
 
 	<build>

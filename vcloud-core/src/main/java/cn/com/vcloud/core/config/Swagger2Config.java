@@ -1,4 +1,4 @@
-package cn.com.vcloud.admin.core.config;
+package cn.com.vcloud.core.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

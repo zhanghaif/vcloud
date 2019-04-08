@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import cn.com.vcloud.admin.core.common.SysLog;
 import cn.com.vcloud.admin.core.interceptor.LogInterceptor;
-import cn.com.vcloud.admin.core.jwt.JwtUtil;
 import cn.com.vcloud.admin.model.entity.SysUser;
 import cn.com.vcloud.admin.service.LogService;
 import cn.com.vcloud.admin.service.UserService;
 import cn.com.vcloud.admin.service.impl.UserDetailsServiceImpl;
+import cn.com.vcloud.core.jwt.JwtUtil;
 import cn.com.vcloud.core.response.Result;
 import cn.com.vcloud.core.response.ResultGenerator;
 import io.swagger.annotations.Api;
@@ -51,6 +51,12 @@ public class AdminController {
     
     @Resource
     private LogInterceptor logInterceptor;
+    
+    @GetMapping("/admin")
+    public Result test(final Principal user) {
+        return ResultGenerator.genOkResult("admin");
+    }
+    
     /**
      * 
      * @Title: info   

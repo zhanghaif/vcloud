@@ -12,7 +12,9 @@ import cn.com.vcloud.core.response.Result;
 import cn.com.vcloud.core.response.ResultGenerator;
 import cn.com.vcloud.test.model.entity.SysTest;
 import cn.com.vcloud.test.service.TestService;
+import io.swagger.annotations.Api;
 
+@Api(value="test",tags={"test"})
 @RestController
 @RequestMapping("/v1/test")
 public class TestController {
@@ -28,6 +30,7 @@ public class TestController {
 	@GetMapping
 	public Result list() {
 		return ResultGenerator.genOkResult(testService.findAll());
+//		return ResultGenerator.genOkResult("test");
 	}
 	
 	@PostMapping

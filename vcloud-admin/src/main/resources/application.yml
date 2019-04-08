@@ -2,12 +2,12 @@ server:
     port: 10003
     tomcat:
       uri-encoding: utf-8
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:10001/eureka/
-  instance:
-    prefer-ip-address: true
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:10001/eureka/
+#  instance:
+#    prefer-ip-address: true
 
 spring:
   application:
@@ -39,18 +39,12 @@ spring:
     add-mappings: false
 mybatis:
   mapper-locations: classpath:mapper/**/*.xml
-  type-aliases-package: cn.com.icloud.auth.mapper  
+  type-aliases-package: cn.com.icloud.admin.mapper  
   
-# 配置分页插件pagehelper
-pagehelper:
-    helperDialect: mysql
-    reasonable: true
-    supportMethodsArguments: true
-    params: count=countSql
              
 logging:
   level:
-    cn.com.icloud.auth.mapper: debug
+    cn.com.icloud.admin.mapper: debug
     
 jwt.expiration-time: 86400
 jwt.header: Authorization

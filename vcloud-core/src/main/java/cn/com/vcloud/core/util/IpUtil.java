@@ -1,4 +1,4 @@
-package cn.com.vcloud.admin.util;
+package cn.com.vcloud.core.util;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
