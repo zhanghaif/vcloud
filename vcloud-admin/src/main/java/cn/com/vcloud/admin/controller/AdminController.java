@@ -52,11 +52,6 @@ public class AdminController {
     @Resource
     private LogInterceptor logInterceptor;
     
-    @GetMapping("/admin")
-    public Result test(final Principal user) {
-        return ResultGenerator.genOkResult("admin");
-    }
-    
     /**
      * 
      * @Title: info   
@@ -74,6 +69,15 @@ public class AdminController {
         return ResultGenerator.genOkResult(userDB);
     }
 	
+    /**
+     * 
+     * @Title: login   
+     * @Description: 用户登录接口
+     * @param: @param user
+     * @param: @return      
+     * @return: Result 返回登录成功后的token信息     
+     * @throws
+     */
 	@ApiOperation(value = "根据用户名密码进行登录", notes = "获取token信息")
     @ApiImplicitParam(name = "user", value = "用户实体", required = true, dataType = "SysUser")
 	@SysLog(module = "登录", action = "登录")
@@ -94,6 +98,15 @@ public class AdminController {
 		return this.getToken(user);
 	}
 	
+	/**
+	 * 
+	 * @Title: logout   
+	 * @Description: 注销登录信息
+	 * @param: @param user
+	 * @param: @return      
+	 * @return: Result data返回null      
+	 * @throws
+	 */
 	@ApiOperation(value = "用户登出", notes = "注销登录信息")
     @ApiImplicitParam(name = "user", value = "信息", required = true)
 	@SysLog(module = "退出", action = "退出")
