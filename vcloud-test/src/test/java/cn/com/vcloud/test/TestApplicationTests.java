@@ -1,4 +1,4 @@
-package cn.com.vcloud;
+package cn.com.vcloud.test;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

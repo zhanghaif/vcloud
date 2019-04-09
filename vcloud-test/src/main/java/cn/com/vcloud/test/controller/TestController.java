@@ -2,6 +2,7 @@ package cn.com.vcloud.test.controller;
 
 import javax.annotation.Resource;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,12 +31,17 @@ public class TestController {
 	@GetMapping
 	public Result list() {
 		return ResultGenerator.genOkResult(testService.findAll());
-//		return ResultGenerator.genOkResult("test");
 	}
 	
 	@PostMapping
 	public Result add(@RequestBody final SysTest test) {
 		testService.save(test);
 		return ResultGenerator.genOkResult(test);
+	}
+	
+	@DeleteMapping("/{id}")
+	public Result delete(@PathVariable final Long id) {
+		testService.deleteById(id);
+		return ResultGenerator.genOkResult(id);
 	}
 }
