@@ -15,6 +15,7 @@ mybatis<br>
 spring-security<br>
 jwt<br>
 swagger2<br>
+junit4<br>
 
 ### 开发环境说明
 JDK1.8<br>
