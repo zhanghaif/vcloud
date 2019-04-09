@@ -42,13 +42,14 @@
     3、初始化vue，下载vue脚手架,下载项目部署本地
       1）在本地新建文件夹，在文件夹下打开命令行窗口或者git bash
       2）vue init webpack demo(项目名),project name、project description、author这三个直接回车，
-      vue build选择第一个（runtime + compiler）,vue-router选择yes，其他都选择no，
-      mended（use arrow keys）选择第三个 No, I will handle that myself
+         vue build选择第一个（runtime + compiler）,vue-router选择yes，其他都选择no，
+         mended（use arrow keys）选择第三个 No, I will handle that myself
       3）下载项目
           （1）先不要下载项目依赖，在github上下载项目
           （2）下载项目两种方式，git下载和直接在github项目地址上下载
           （3）github项目地址 https://github.com/zhanghaif/vcloud ，点击右侧的clone or download，选择Download ZIP
-          （4）git下载，在本地创建一个文件夹， 重复（3）复制input框中的url（以https开头的）右键打开git bash，把复制的url粘贴到git bash
+          （4）git下载，在本地创建一个文件夹， 重复（3）复制input框中的url（以https开头的）右键打开git bash，
+               把复制的url粘贴到git bash
       4）部署本地
           （1）把下载的项目中的vcloud-app中的src文件夹和package.json文件复制到demo（项目名）文件夹下，替换对应的文件夹和文件
           （2）在命令行中 按顺序执行cd demo（项目名）cnpm install
