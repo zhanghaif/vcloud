@@ -41,7 +41,9 @@
       cnpm install -g vue-cli@2.9.6
     3、初始化vue，下载vue脚手架,下载项目部署本地
       1）在本地新建文件夹，在文件夹下打开命令行窗口或者git bash
-      2）vue init webpack demo(项目名),project name、project description、author这三个直接回车，vue build选择第一个（runtime + compiler）,vue-router选择yes，其他都选择no，mended（use arrow keys）选择第三个 No, I will handle that myself
+      2）vue init webpack demo(项目名),project name、project description、author这三个直接回车，
+      vue build选择第一个（runtime + compiler）,vue-router选择yes，其他都选择no，
+      mended（use arrow keys）选择第三个 No, I will handle that myself
       3）下载项目
           （1）先不要下载项目依赖，在github上下载项目
           （2）下载项目两种方式，git下载和直接在github项目地址上下载
