@@ -2,26 +2,26 @@
 
 ### 使用框架
 
-    nodejs10.15.3
-    npm6.4.1
-    vue2.9.6
-    vue-cli2.9.6
-    axios0.18.0
-    element-ui2.6.1
+    nodejs@10.15.3
+    npm@6.4.1
+    vue@2.9.6
+    vue-cli@2.9.6
+    axios@0.18.0
+    element-ui@2.6.1
 
 ### 环境说明
 
 ### 开发环境
 
-    nodejs10.15.3
-    npm6.4.1
-    vue2.9.6
-    vue-cli2.9.6
+    nodejs@10.15.3
+    npm@6.4.1
+    vue@2.9.6
+    vue-cli@2.9.6
     
 ### 运行环境
 
-    nodejs10.15.3
-    vue-cli2.9.6
+    nodejs@10.15.3
+    vue-cli@2.9.6
     
 ### 打包
     
