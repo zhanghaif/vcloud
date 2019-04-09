@@ -42,5 +42,6 @@ public final class ProjectConstant {
      ** 示例代码管理模块Mapper所在包
      */
     public static final String TEST_MAPPER_PACKAGE = BASE_PACKAGE + ".test.mapper";
+    
    
 }
