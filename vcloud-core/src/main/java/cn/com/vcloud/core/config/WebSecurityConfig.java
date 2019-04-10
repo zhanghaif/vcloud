@@ -68,11 +68,12 @@ class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // 允许登录和注册
                 .antMatchers(
                         HttpMethod.POST,
-                        "/v1/login"
+                        "/v1/login",
+                        "/druid/**"
                 ).permitAll()
                 .antMatchers(
                         HttpMethod.GET,
-                        "/v1"
+                        "/druid/**"
                 ).permitAll()
                 .antMatchers(
                         HttpMethod.GET,
