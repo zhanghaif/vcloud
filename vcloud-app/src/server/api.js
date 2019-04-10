@@ -6,7 +6,7 @@ import router from '../router'
 
 let HOST = process.env.HOST
 axios.defaults.timeout = 5000
-axios.defaults.baseURL = 'http://192.168.4.154:8090/v1'
+axios.defaults.baseURL = 'http://localhost:10003/v1'
 axios.defaults.headers.post['Content-Type'] = 'application/json'
 // http request 拦截器
 axios.interceptors.request.use(
